@@ -1,7 +1,18 @@
 #container {
     display: flex;
     justify-content: center;
-    align-content: flex;
-    margin: 0;
-    height: 500px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.square {
+    margin: 1px;
+    background-color: lightcyan;
+}
+
+#btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
