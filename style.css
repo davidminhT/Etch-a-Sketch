@@ -19,6 +19,15 @@ body {
     background-size: auto;
 }
 
+#Header {
+    font-size: 100px;
+    color: white;
+    font-weight: 600px;
+    text-shadow: 2px 2px 50px;
+    -webkit-text-stroke: 1px black;
+    
+}
+
 #Main {
     display: flex;
     flex-direction: row;
@@ -30,9 +39,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border: 10px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0px 2px 30px black
+    box-shadow: 0px 2px 30px white;
 }
 
 #Main > #RightBox
@@ -41,13 +48,12 @@ body {
     flex-direction: column;
     max-width: 500px;   
     background-color: lightblue;
-    border: 3px solid lightgray;
     padding: 20px;
     text-align: center;
     gap: 10px;
     justify-content: space-evenly;
     border-radius: 15px 50px;
-    box-shadow: 0px 2px 30px black;
+    box-shadow: 0px 2px 30px white;
 }
 
 
