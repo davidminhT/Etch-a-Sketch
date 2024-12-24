@@ -106,12 +106,57 @@ function setupGrid(num)
 
 var GlobalGridSize = 32;
 setupGrid(32);
+setupKeysIndicator();
 
 document.addEventListener("keydown", (e) => {
     if(e.key === "r")
     {
         setupGrid(GlobalGridSize);
     }
+});
+
+function setupKeysIndicator() 
+{
+    const KeyIndicatorBox = document.querySelector("#KeyIndicatorBox");
+    KeyIndicatorBox.setAttribute("style", "display: flex; gap: 50px;");
+    for(let i = 0; i < 3; i++)
+    {
+        const KeyBox = document.createElement("div");
+        if(i == 0)
+            KeyBox.textContent = "Shift";
+        else if(i == 1)
+            KeyBox.textContent = "Q";
+        else if(i == 2)
+            KeyBox.textContent = "R";
+
+        KeyBox.className = "KeyBox";
+        KeyBox.style.width = "100px";
+        KeyBox.style.height = "30px";
+        KeyBox.style.border = "2px solid white";
+        KeyBox.style.backgroundColor = "darkgray";
+        KeyBox.style.textAlign = "center";
+        KeyBox.style.alignContent = "center";
+        KeyBox.style.boxShadow = "2px 2px 15px white";
+        KeyBox.style.borderRadius = "8px";
+
+        KeyIndicatorBox.appendChild(KeyBox);
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    const activeKey = Array.from(KeyIndicatorBox.children).find(
+        (child) => child.textContent.toLowerCase() === e.key.toLowerCase()
+    );
+    if(activeKey)
+        activeKey.classList.add("pop-effect");
+});
+
+document.addEventListener("keyup", (e) => {
+    const activeKey = Array.from(KeyIndicatorBox.children).find(
+        (child) => child.textContent.toLowerCase() === e.key.toLowerCase()
+    );
+    if(activeKey)
+        activeKey.classList.remove("pop-effect");
 });
 
 
