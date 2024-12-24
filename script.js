@@ -3,9 +3,10 @@ function setupGrid(num)
 {
     const ContainerDiv = document.querySelector("#container");
     ContainerDiv.innerHTML = '';
-    const length = 800;
+    const length = 700;
     ContainerDiv.style.maxWidth = `${length}px`;
     ContainerDiv.style.maxHeight = `${length}px`;
+    ContainerDiv.style.border = "1px solid black";
 
     //Event listener for shift key
     let KeyPressed = false;
@@ -21,6 +22,20 @@ function setupGrid(num)
             KeyPressed = false;
         }
     });
+
+    let ErasedKeyPressed = false;
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "q") {
+            ErasedKeyPressed = true;
+        }
+    });
+
+    document.addEventListener('keyup', (e) => {
+        if (e.key === "q") {
+            ErasedKeyPressed = false;
+        }
+    });
     
 
     let SquareSize = (length / num);
@@ -33,13 +48,25 @@ function setupGrid(num)
         //styling
         GridSquare.style.width = `${SquareSize}px`;
         GridSquare.style.height = `${SquareSize}px`;
-        GridSquare.style.backgroundColor = "lightcyan";
-
+        GridSquare.style.backgroundColor = "white";
+        GridSquare.style.opacity = 0.1;
+        GridSquare.style.outline = "0.5px solid grey";
+        
         //Event listener
         GridSquare.addEventListener('mousemove', (e) => {
             if (KeyPressed)     
             {
-                GridSquare.style.backgroundColor = "red";
+                const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
+                if(currentOpacity < 1) 
+                {
+                    GridSquare.style.backgroundColor = "red";
+                    GridSquare.style.opacity = currentOpacity + 0.1;
+                }
+            }
+            else if (ErasedKeyPressed)
+            {
+                GridSquare.style.backgroundColor = "white";
+                GridSquare.style.opacity = 0.1;
             }
         });
 
@@ -48,15 +75,15 @@ function setupGrid(num)
     }
 }
 
-var GlobalGridSize = 64;
-setupGrid(64);
+var GlobalGridSize = 32;
+setupGrid(32);
 
 const button = document.querySelector("#btn1");
 button.addEventListener("click", () => {
     NewGridSize = prompt("Enter the new size of grid!");
-    if(NewGridSize > 600)
-        GlobalGridSize = 600;
-    else if(NewGridSize < 1)
+    if(NewGridSize > 64)
+        GlobalGridSize = 64;
+    else if(NewGridSize < 1 || NewGridSize == " ")
         GlobalGridSize = 1;
     else
         GlobalGridSize = NewGridSize;
