@@ -21,7 +21,7 @@ function setupGrid(num)
     GlobalGridSize = num;
 
     ContainerDiv.innerHTML = '';
-    const length = 700;
+    const length = 706;
     ContainerDiv.style.maxWidth = `${length}px`;
     ContainerDiv.style.maxHeight = `${length}px`;
     ContainerDiv.style.backgroundColor = "white";
