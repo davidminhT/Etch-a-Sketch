@@ -12,5 +12,5 @@
 - Color intensity slider which adjust the strength of the drawn color.
 - Instead of a prompt button to change the Grid Size, use a slider instead.
 - Make the site pleasing to look at.
-- Make the drawing aspect engaging to user by adding special effects.
-
+- Make the drawing aspect engaging to user by adding special effects. This would also help the user know which box is being affected.
+- Have indicators for which keys is being pressed to prevent confusion.
