@@ -56,8 +56,8 @@ setupGrid(64);
 const button = document.querySelector("#btn1");
 button.addEventListener("click", () => {
     NewGridSize = prompt("Enter the new size of grid!");
-    if(NewGridSize > 100)
-        GlobalGridSize = 100;
+    if(NewGridSize > 600)
+        GlobalGridSize = 600;
     else if(NewGridSize < 1)
         GlobalGridSize = 1;
     else
