@@ -1,7 +1,5 @@
 # Etch-and-Sketch
 
-### The Odin Project Foundation Course: Etch and Sketch Project
-
 ### Assignment
 - Create an "Etch and sketch" digital drawing pad.
 - The canvas size is allocated a constant area of pixels that doesn't change even if Grid Size is changed.
