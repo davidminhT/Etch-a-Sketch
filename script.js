@@ -76,15 +76,15 @@ function setupGrid(num)
             const CurrentColor = document.getElementById("favcolor").value;
             if (KeyPressed)     
             {
+                GridSquare.style.backgroundColor = CurrentColor;
                 if(GridSquare.style.opacity === "0.1")
                 {
-                    GridSquare.style.backgroundColor = CurrentColor;
                     GridSquare.style.opacity = UserSetOpacity;
                 }
                 if(StartTime - LastOpacityUpdateTime > PauseDuration) 
                 {
                     const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
-                    GridSquare.style.opacity = Math.min(currentOpacity + 0.2, 1);  
+                    GridSquare.style.opacity = Math.min(currentOpacity + 0.1, 1);  
                     LastOpacityUpdateTime = StartTime;
                 }              
             }

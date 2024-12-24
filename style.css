@@ -38,25 +38,40 @@ body {
     background-color: lightblue;
     border: 3px solid rgb(255, 225, 239);
     padding: 20px;
+    text-align: center;
+    gap: 10px;
+    justify-content: space-evenly;
 }
 
-#Main > #RightBox > div {
-    gap: 20px;
-}
 
 #Main > #RightBox > #GridSizeBox {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    gap:20px;
 }
 
 #GridSizeRange {
     accent-color: purple;
-    width: 350px;
+    width: 280px;
 }
 
 #ColorIntensityRange {
-    width: 350px;
+    width: 280px;
     accent-color: purple;
+}
+
+#Main > #RightBox > .GenericBox {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    gap:10px;
+}
+
+#Main > #RightBox > #Guide {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    flex-direction: column;
+    gap:20px;
 }
