@@ -24,7 +24,6 @@ function setupGrid(num)
     const length = 700;
     ContainerDiv.style.maxWidth = `${length}px`;
     ContainerDiv.style.maxHeight = `${length}px`;
-    ContainerDiv.style.border = "3px solid black";
     ContainerDiv.style.backgroundColor = "white";
     //Event listener for shift key
     let KeyPressed = false;
