@@ -7,7 +7,7 @@ function setupGrid(num)
     ContainerDiv.style.maxWidth = `${length}px`;
     ContainerDiv.style.maxHeight = `${length}px`;
     ContainerDiv.style.border = "1px solid black";
-
+    ContainerDiv.style.backgroundColor = "white";
     //Event listener for shift key
     let KeyPressed = false;
 
@@ -50,7 +50,7 @@ function setupGrid(num)
         GridSquare.style.height = `${SquareSize}px`;
         GridSquare.style.backgroundColor = "white";
         GridSquare.style.opacity = 0.1;
-        GridSquare.style.outline = "0.5px solid grey";
+        GridSquare.style.outline = "0.8px solid grey";
         
         //Event listener
         GridSquare.addEventListener('mousemove', (e) => {
