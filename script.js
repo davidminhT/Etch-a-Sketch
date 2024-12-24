@@ -7,6 +7,22 @@ function setupGrid(num)
     ContainerDiv.style.width = `${length}px`;
     ContainerDiv.style.height = `${length}px`;
 
+    //Event listener for shift key
+    let KeyPressed = false;
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Shift") {
+            KeyPressed = true;
+        }
+    });
+
+    document.addEventListener('keyup', (e) => {
+        if (e.key === "Shift") {
+            KeyPressed = false;
+        }
+    });
+    
+
     let SquareSize = Math.floor(length / Math.ceil(Math.sqrt(num)));
 
     for(let i = 0; i < num; i++)
@@ -21,10 +37,12 @@ function setupGrid(num)
         GridSquare.style.border = "1px solid black";
         GridSquare.style.boxSizing = "border-box";
 
-        //Event listeners
-        GridSquare.addEventListener("mouseover", () => {
-            if(KeyPressed) 
+        //Event listener
+        GridSquare.addEventListener('mousemove', (e) => {
+            if (KeyPressed)     
+            {
                 GridSquare.style.backgroundColor = "red";
+            }
         });
 
         //Append the GridSquare
@@ -54,19 +72,5 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-let KeyPressed = false;
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Shift")      
-    {
-        KeyPressed = true;
-    }
-});
-
-document.addEventListener('keyup', (e) => {
-    if (e.key === "Shift")      
-    {
-        KeyPressed = false;
-    }
-});
 
