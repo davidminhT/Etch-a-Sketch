@@ -54,12 +54,13 @@ function setupGrid(num)
         
         //Event listener
         GridSquare.addEventListener('mousemove', (e) => {
+            var CurrentColor = document.getElementById("favcolor").value;
             if (KeyPressed)     
             {
                 const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
                 if(currentOpacity < 1) 
                 {
-                    GridSquare.style.backgroundColor = "red";
+                    GridSquare.style.backgroundColor = CurrentColor;
                     GridSquare.style.opacity = currentOpacity + 0.1;
                 }
             }
