@@ -85,7 +85,12 @@ function setupGrid(num)
                     const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
                     GridSquare.style.opacity = Math.min(currentOpacity + 0.1, 1);  
                     LastOpacityUpdateTime = StartTime;
-                }              
+                }
+                
+                GridSquare.classList.add("pop-effect");
+                setTimeout(() => {
+                    GridSquare.classList.remove("pop-effect");
+                }, 200);
             }
             else if (ErasedKeyPressed)
             {
