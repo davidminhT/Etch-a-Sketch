@@ -16,6 +16,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: "ＭＳ Ｐゴシック";
+    font-size: large;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
     justify-content: center;
     max-width: 100%;  
     gap: 10px;
-    background-color: blanchedalmond;
+    background-image: url("Images/wp1933972.webp");
 }
 
 #Main {
@@ -36,7 +37,12 @@ body {
     
 }
 
-#Main > div {
+#Main > #RightBox
+{
+    display: flex;
+    flex-direction: column;
     max-width: 400px;   
     background-color: lightblue;
+    gap: 10px;
+    border: 1px solid black;
 }
