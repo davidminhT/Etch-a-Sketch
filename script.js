@@ -1,9 +1,24 @@
 
+//Opacity
+const OpacitySlider = document.getElementById("ColorIntensityRange");
+let UserSetOpacity = parseFloat(OpacitySlider.value);
+let OpacityLabel = document.getElementById("ColorIntensityLabel");
+OpacitySlider.addEventListener("input", () => {
+    UserSetOpacity = parseFloat(OpacitySlider.value);
+    OpacityLabel.textContent = UserSetOpacity.toFixed(1);
+});
+
+
+//Pause Duration
+//Last Update
+var PauseDuration = 50;
+var LastOpacityUpdateTime = 0;
 function setupGrid(num)
 {
     const ContainerDiv = document.querySelector("#container");
     const GridSizeLabel = document.getElementById("GridSizeLabel")
     GridSizeLabel.textContent = num;
+    GlobalGridSize = num;
 
     ContainerDiv.innerHTML = '';
     const length = 700;
@@ -57,15 +72,21 @@ function setupGrid(num)
         
         //Event listener
         GridSquare.addEventListener('mousemove', (e) => {
-            var CurrentColor = document.getElementById("favcolor").value;
+            const StartTime = Date.now();
+            const CurrentColor = document.getElementById("favcolor").value;
             if (KeyPressed)     
             {
-                const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
-                if(currentOpacity < 1) 
+                if(GridSquare.style.opacity === "0.1")
                 {
                     GridSquare.style.backgroundColor = CurrentColor;
-                    GridSquare.style.opacity = currentOpacity + 0.1;
+                    GridSquare.style.opacity = UserSetOpacity;
                 }
+                if(StartTime - LastOpacityUpdateTime > PauseDuration) 
+                {
+                    const currentOpacity = parseFloat(window.getComputedStyle(GridSquare).opacity);
+                    GridSquare.style.opacity = Math.min(currentOpacity + 0.2, 1);  
+                    LastOpacityUpdateTime = StartTime;
+                }              
             }
             else if (ErasedKeyPressed)
             {

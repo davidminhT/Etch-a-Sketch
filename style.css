@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: "ＭＳ Ｐゴシック";
-    font-size: large;
+    font-size: x-large;
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    
 }
 
 #Main > #RightBox
@@ -37,9 +36,12 @@ body {
     flex-direction: column;
     max-width: 400px;   
     background-color: lightblue;
-    gap: 10px;
     border: 3px solid rgb(255, 225, 239);
     padding: 20px;
+}
+
+#Main > #RightBox > div {
+    gap: 20px;
 }
 
 #Main > #RightBox > #GridSizeBox {
@@ -51,5 +53,10 @@ body {
 
 #GridSizeRange {
     accent-color: purple;
+    width: 350px;
 }
 
+#ColorIntensityRange {
+    width: 350px;
+    accent-color: purple;
+}
