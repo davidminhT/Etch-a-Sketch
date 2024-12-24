@@ -1,6 +1,6 @@
 # Etch-a-Sketch
 ### Project Showcase
-![Screenshot 2024-12-24 155136](https://github.com/user-attachments/assets/1512e65b-161e-4e7d-9702-0fe611695037)
+![Screenshot 2024-12-24 155317](https://github.com/user-attachments/assets/af8b844d-0726-4fde-86d5-b9ea72b3e9ac)
 ### Assignment
 - Create an "Etch a sketch" digital drawing pad.
 - The canvas size is allocated a constant area of pixels that doesn't change even if Grid Size is changed.
