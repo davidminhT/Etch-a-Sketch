@@ -3,9 +3,9 @@ function setupGrid(num)
 {
     const ContainerDiv = document.querySelector("#container");
     ContainerDiv.innerHTML = '';
-    const length = 600;
-    ContainerDiv.style.width = `${length}px`;
-    ContainerDiv.style.height = `${length}px`;
+    const length = 800;
+    ContainerDiv.style.maxWidth = `${length}px`;
+    ContainerDiv.style.maxHeight = `${length}px`;
 
     //Event listener for shift key
     let KeyPressed = false;
@@ -23,9 +23,9 @@ function setupGrid(num)
     });
     
 
-    let SquareSize = Math.floor(length / Math.ceil(Math.sqrt(num)));
+    let SquareSize = (length / num);
 
-    for(let i = 0; i < num; i++)
+    for(let i = 0; i < num*num; i++)
     {
         const GridSquare = document.createElement("div");
         GridSquare.className = "square";
@@ -34,8 +34,6 @@ function setupGrid(num)
         GridSquare.style.width = `${SquareSize}px`;
         GridSquare.style.height = `${SquareSize}px`;
         GridSquare.style.backgroundColor = "lightcyan";
-        GridSquare.style.border = "1px solid black";
-        GridSquare.style.boxSizing = "border-box";
 
         //Event listener
         GridSquare.addEventListener('mousemove', (e) => {
