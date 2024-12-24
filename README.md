@@ -4,7 +4,6 @@
 - Create an "Etch and sketch" digital drawing pad.
 - The canvas size is allocated a constant area of pixels that doesn't change even if Grid Size is changed.
 - User change change the grid size through a prompt button.
-- 
 
 ### Goals
 - User should be able to control the site through keyboard inputs.
