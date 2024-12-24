@@ -4,14 +4,6 @@
     justify-content: flex-start;
 }
 
-#btn1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 50px;
-}
-
 html, body {
     height: 100%;
     overflow: hidden;
@@ -27,6 +19,8 @@ body {
     max-width: 100%;  
     gap: 10px;
     background-image: url("Images/wp1933972.webp");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 #Main {
@@ -44,5 +38,18 @@ body {
     max-width: 400px;   
     background-color: lightblue;
     gap: 10px;
-    border: 1px solid black;
+    border: 3px solid rgb(255, 225, 239);
+    padding: 20px;
 }
+
+#Main > #RightBox > #GridSizeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+#GridSizeRange {
+    accent-color: purple;
+}
+

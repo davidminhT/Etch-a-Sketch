@@ -10,7 +10,13 @@
 <body>
     <div id="Main">
         <div id="RightBox">
-            <button id="btn1">Change grid size by clicking this.</button>
+            <label>Change your Grid Size by adjusting the slider below!</label>
+            <div id="GridSizeBox">
+                <input type="range" min ="1" max="64" value="32" class="slider" id="GridSizeRange" step="7"
+                oninput="setupGrid(this.value)">
+                <label id="GridSizeLabel">32</label>
+            </div> 
+            
             <label for="favcolor">Select your favorite color:</label>
             <input type="color" id="favcolor" value="#ff0000">
             <div id="Info">Hold Shift while hovering over the square to draw! Hold Q while hovering over the square to erase! Finally, press R to reset!</div>

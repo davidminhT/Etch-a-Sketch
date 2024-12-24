@@ -2,11 +2,14 @@
 function setupGrid(num)
 {
     const ContainerDiv = document.querySelector("#container");
+    const GridSizeLabel = document.getElementById("GridSizeLabel")
+    GridSizeLabel.textContent = num;
+
     ContainerDiv.innerHTML = '';
     const length = 700;
     ContainerDiv.style.maxWidth = `${length}px`;
     ContainerDiv.style.maxHeight = `${length}px`;
-    ContainerDiv.style.border = "1px solid black";
+    ContainerDiv.style.border = "3px solid black";
     ContainerDiv.style.backgroundColor = "white";
     //Event listener for shift key
     let KeyPressed = false;
@@ -78,18 +81,6 @@ function setupGrid(num)
 
 var GlobalGridSize = 32;
 setupGrid(32);
-
-const button = document.querySelector("#btn1");
-button.addEventListener("click", () => {
-    NewGridSize = prompt("Enter the new size of grid!");
-    if(NewGridSize > 64)
-        GlobalGridSize = 64;
-    else if(NewGridSize < 1 || NewGridSize == " ")
-        GlobalGridSize = 1;
-    else
-        GlobalGridSize = NewGridSize;
-    setupGrid(GlobalGridSize);
-});
 
 document.addEventListener("keydown", (e) => {
     if(e.key === "r")
