@@ -1,14 +1,10 @@
 #container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    margin: auto;
+    justify-content: flex-start;
 }
 
-.square {
-    margin: 1px;
-}
+
 
 #btn1 {
     display: flex;

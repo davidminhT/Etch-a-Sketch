@@ -3,35 +3,23 @@ function setupGrid(num)
 {
     const ContainerDiv = document.querySelector("#container");
     ContainerDiv.innerHTML = '';
-    ContainerDiv.style.width = `${Math.sqrt(num) * 52}px`;
-    ContainerDiv.style.height = `${Math.sqrt(num) * 52}px`;
-    let KeyPressed = false;
+    const length = 600;
+    ContainerDiv.style.width = `${length}px`;
+    ContainerDiv.style.height = `${length}px`;
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Shift")      
-        {
-            KeyPressed = true;
-        }
-    });
-
-    document.addEventListener('keyup', (e) => {
-        if (e.key === "Shift")      
-        {
-            KeyPressed = false;
-        }
-    });
+    let SquareSize = Math.floor(length / Math.ceil(Math.sqrt(num)));
 
     for(let i = 0; i < num; i++)
     {
         const GridSquare = document.createElement("div");
+        GridSquare.className = "square";
 
         //styling
-        GridSquare.className = "square";
-        GridSquare.style.width= "50px";
-        GridSquare.style.height = "50px";
+        GridSquare.style.width = `${SquareSize}px`;
+        GridSquare.style.height = `${SquareSize}px`;
         GridSquare.style.backgroundColor = "lightcyan";
-        GridSquare.style.border = "2px solid black";
-        GridSquare.tabIndex = 0;
+        GridSquare.style.border = "1px solid black";
+        GridSquare.style.boxSizing = "border-box";
 
         //Event listeners
         GridSquare.addEventListener("mouseover", () => {
@@ -44,15 +32,18 @@ function setupGrid(num)
     }
 }
 
-
-
-
 var GlobalGridSize = 64;
 setupGrid(64);
 
 const button = document.querySelector("#btn1");
 button.addEventListener("click", () => {
-    GlobalGridSize = prompt("Enter the new size of grid!");
+    NewGridSize = prompt("Enter the new size of grid!");
+    if(NewGridSize > 100)
+        GlobalGridSize = 100;
+    else if(NewGridSize < 1)
+        GlobalGridSize = 1;
+    else
+        GlobalGridSize = NewGridSize;
     setupGrid(GlobalGridSize);
 });
 
@@ -60,6 +51,22 @@ document.addEventListener("keydown", (e) => {
     if(e.key === "r")
     {
         setupGrid(GlobalGridSize);
+    }
+});
+
+let KeyPressed = false;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Shift")      
+    {
+        KeyPressed = true;
+    }
+});
+
+document.addEventListener('keyup', (e) => {
+    if (e.key === "Shift")      
+    {
+        KeyPressed = false;
     }
 });
 
