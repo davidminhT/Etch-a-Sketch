@@ -14,3 +14,9 @@
 - Make the site pleasing to look at.
 - Make the drawing aspect engaging to user by adding special effects. This would also help the user know which box is being affected.
 - Have indicators for which keys is being pressed to prevent confusion.
+
+### Challenges & What I Learned
+- Using git to organize my project into multiple experimental branches when I'm implementing new features.
+- I found it difficult to organize the HTML elements in a way that would work for flexboxes as well as for Javascript references. This project allowed me to see many different scenarios where class and id can be useful.
+- I learned how to manage website events propagation and bubbling by implementing a grid of divs that each has its own corresponding event listeners.
+- Implementing the usage of keys to control my website helped me learn to combine events and tasks as well as how to use these events effectively.
